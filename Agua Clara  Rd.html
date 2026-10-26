@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agua Clara RD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--t:#00797a;--bt:#00797a;--td:#005f60;--n:#12304a;--m:#566879;--bg:#f6f8fc;--c:#fff;--mint:#e3f3f3;--o:#e87b55;--b:#dde4ee;--er:#b3261e;--ok:#1b7f4b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--t:#4fd0d0;--bt:#0b8a8a;--n:#e8eef5;--m:#9fb0c1;--bg:#0f1a24;--c:#16232f;--mint:#12363a;--b:#27384a;--er:#ff8a80;--ok:#6fdc9f;color-scheme:dark}}
+:root[data-theme="dark"]{--t:#4fd0d0;--bt:#0b8a8a;--n:#e8eef5;--m:#9fb0c1;--bg:#0f1a24;--c:#16232f;--mint:#12363a;--b:#27384a;--er:#ff8a80;--ok:#6fdc9f;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--n);font:15px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+button,input,select,textarea{font:inherit;color:inherit}
+.w{max-width:1040px;margin:0 auto;padding:0 20px}
+header{background:var(--c);border-bottom:1px solid var(--b)}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+.brand{display:flex;align-items:center;gap:8px;background:none;border:0;cursor:pointer;font-size:17px;font-weight:700;color:var(--n)}
+nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.nl{background:none;border:0;padding:7px 12px;border-radius:9px;cursor:pointer;font-size:13px;font-weight:600;color:var(--m)}
+.nl.on{background:var(--mint);color:var(--t)}
+.bn{background:var(--mint);color:var(--t);font-size:12px;text-align:center;padding:4px}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--o);outline-offset:2px}
+.btn{background:var(--bt);color:#fff;border:1px solid var(--bt);border-radius:9px;padding:9px 16px;font-weight:600;font-size:13px;cursor:pointer}
+.btn:hover{filter:brightness(.88)}.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.s{background:var(--c);color:var(--n);border-color:var(--b)}
+.btn.sm{padding:5px 10px;font-size:12px}.btn.r{background:var(--er);border-color:var(--er);color:#fff}
+.tag{display:inline-block;background:var(--mint);color:var(--t);border-radius:99px;padding:3px 12px;font-size:12px;font-weight:600}
+.tag.er{background:rgba(179,38,30,.13);color:var(--er)}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.1;margin:.4em 0 .3em;font-weight:800}
+h2{font-size:22px;margin:1.2em 0 .3em}h3{font-size:16px;margin:0 0 8px}
+p{margin:.3em 0}.mu{color:var(--m)}.sm{font-size:12px}
+main{padding:30px 0 50px;min-height:60vh}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:center}
+.art{background:var(--mint);border-radius:18px;overflow:hidden;position:relative}
+.art svg{display:block;width:100%;height:auto}
+.mini{position:absolute;left:14px;bottom:14px;background:var(--c);border-radius:12px;padding:10px 14px;box-shadow:0 4px 14px rgba(0,0,0,.12);font-size:12px}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.gs{display:grid;grid-template-columns:2fr 1fr;gap:16px;align-items:start}
+.card{background:var(--c);border:1px solid var(--b);border-radius:14px;padding:18px}
+.ic{width:34px;height:34px;border-radius:10px;background:var(--mint);color:var(--t);display:grid;place-items:center;font-weight:700;margin-bottom:10px}
+label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px}
+input,select,textarea{width:100%;background:var(--c);border:1px solid var(--b);border-radius:9px;padding:9px 11px}
+textarea{min-height:90px;resize:vertical}
+.err input,.err select,.err textarea{border-color:var(--er)}
+.em{color:var(--er);font-size:12px;margin-top:3px}.hint{font-size:12px;color:var(--m);margin-top:3px}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.opt{border:1px solid var(--b);border-radius:9px;padding:9px;background:var(--c);cursor:pointer;text-align:left;font-weight:600;font-size:13px}
+.opt.on{background:var(--mint);border-color:var(--t);color:var(--t)}
+.code{background:var(--mint);border:1px solid var(--b);border-radius:12px;text-align:center;padding:14px;margin:14px 0;font-size:30px;font-weight:800}
+.tl{display:flex;gap:12px;margin:14px 0}
+.dot{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--bg);border:1px solid var(--b);font-size:12px;font-weight:700}
+.dot.on{background:var(--bt);color:#fff;border-color:var(--bt)}
+.pn{display:grid;grid-template-columns:200px 1fr;gap:18px;align-items:start}
+.side{display:flex;flex-direction:column;gap:4px}
+.side .nl{text-align:left;font-size:14px}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--b);vertical-align:middle}
+th{color:var(--m);font-weight:600}
+td select,td input{padding:5px 8px;width:auto}
+.hu{font-size:11px;color:var(--m);font-weight:600}
+.pass{color:var(--ok);font-weight:700}.fail{color:var(--er);font-weight:700}
+#t{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--n);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:13px;z-index:9;display:none;max-width:90vw}
+footer{background:var(--c);border-top:1px solid var(--b);padding:18px 0;font-size:12px;color:var(--m)}
+footer .w{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@media(max-width:760px){.hero,.g3,.g2,.gs,.pn{grid-template-columns:1fr}.opts{grid-template-columns:1fr}.side{flex-direction:row;flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div><div id="t" role="status"></div>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const MODS={reportes:'Reportes',usuarios:'Usuarios',roles:'Roles',permisos:'Permisos',auditoria:'Auditoría'},ACT={c:'Crear',r:'Consultar',u:'Modificar',d:'Eliminar'};
+const ROLES=['Super Administrador','Administrador','Agente Inmobiliario','Arquitecto','Ingeniero','Cliente','Supervisor'];
+const IPS=[['190.166.12.4','Santo Domingo, RD'],['201.229.80.17','Santiago, RD'],['186.6.45.9','Punta Cana, RD'],['152.168.7.31','Miami, EE. UU.']];
+const TIPOS=['Falta de agua','Fuga en vía pública','Tubería dañada'],ESTS=['Recibido','En revisión','Atendido'];
+const KEY='aguaclara_epica1',PW='Demo123*';let db,testing=0,v='inicio',tab='reportes',mem={};
+const fmt=t=>new Date(t).toLocaleString('es-DO'),now=()=>Date.now();
+function seed(){const P={},z=()=>({c:0,r:0,u:0,d:0}),a=()=>({c:1,r:1,u:1,d:1}),f=(c,r,u,d)=>({c,r,u,d});
+ROLES.forEach(r=>{P[r]={};Object.keys(MODS).forEach(m=>P[r][m]=z())});
+Object.keys(MODS).forEach(m=>{P[ROLES[0]][m]=a();P[ROLES[1]][m]=m=='permisos'?f(0,1,0,0):a()});
+P[ROLES[2]].reportes=f(1,1,1,0);P[ROLES[3]].reportes=f(0,1,1,0);P[ROLES[4]].reportes=f(0,1,1,0);P[ROLES[5]].reportes=f(0,1,0,0);P[ROLES[6]].reportes=f(0,1,1,0);P[ROLES[6]].auditoria=f(0,1,0,0);
+const U=[['Super Admin','super'],['Ana Administradora','admin'],['Agustín Agente','agente'],['Aurora Arquitecta','arquitecto'],['Iván Ingeniero','ingeniero'],['Clara Cliente','cliente'],['Sergio Supervisor','supervisor']].map((x,i)=>({id:i+1,name:x[0],email:x[1]+'@aguaclara.do',phone:'809-555-010'+i,pass:PW,role:ROLES[i],status:'Activo',upd:now()}));
+return{users:U,roles:ROLES.map(n=>({n,a:true})),perms:P,audit:[],tokens:[],session:null,cfg:{resetMin:15},reports:[{code:'DEMO-001',mun:'Santo Domingo Este',sec:'Alma Rosa',tipo:TIPOS[1],desde:'2026-10-02',desc:'Hay una fuga de agua en la calle principal del sector. El agua se acumula junto a la acera.',est:0}]}}
+function load(){try{db=JSON.parse(localStorage.getItem(KEY))}catch(e){}if(!db||!db.users)db=seed()}
+function save(){if(testing)return;try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){}}
+const cur=()=>db.users.find(u=>u.id==db.session)||null;
+function aud(ev,det,email){const i=IPS[Math.floor(Math.random()*IPS.length)],u=cur();db.audit.unshift({t:now(),u:email||(u&&u.email)||'anónimo',ev,ip:i[0],loc:i[1],det:det||''});db.audit=db.audit.slice(0,300);save()}
+function can(m,a){const u=cur();return !!(u&&db.perms[u.role]&&db.perms[u.role][m]&&db.perms[u.role][m][a])}
+function chk(m,a){if(can(m,a))return true;aud('Acceso denegado',MODS[m]+' · '+ACT[a]);toast('Acceso denegado: tu rol no permite '+ACT[a].toLowerCase()+' en '+MODS[m]);return false}
+function login(e,p){const u=db.users.find(x=>x.email.toLowerCase()==String(e).toLowerCase());
+if(!u||u.pass!==p){aud('Intento fallido','Credenciales inválidas',e||'anónimo');return{ok:false,msg:'Correo o contraseña incorrectos.'}}
+if(u.status=='Bloqueado'){aud('Intento bloqueado','Usuario bloqueado',u.email);return{ok:false,msg:'Tu usuario está bloqueado. Contacta al administrador.'}}
+db.session=u.id;aud('Inicio de sesión',u.role);return{ok:true}}
+function logout(){aud('Cierre de sesión','');db.session=null;save()}
+function addUser(o){if(!chk('usuarios','c'))return{ok:false,msg:'Sin permiso'};
+if(!o.name||!o.email||!/^\S+@\S+\.\S+$/.test(o.email))return{ok:false,msg:'Completa nombre y un correo válido.'};
+if(db.users.some(x=>x.email.toLowerCase()==o.email.toLowerCase()))return{ok:false,msg:'Ese correo ya está registrado.'};
+if((o.pass||'').length<8)return{ok:false,msg:'La contraseña necesita al menos 8 caracteres.'};
+db.users.push({id:Math.max(0,...db.users.map(x=>x.id))+1,name:o.name,email:o.email,phone:o.phone||'',pass:o.pass,role:o.role,status:'Activo',upd:now()});aud('Usuario creado',o.email);return{ok:true}}
+function reqReset(e){const u=db.users.find(x=>x.email.toLowerCase()==String(e).toLowerCase());if(!u)return null;
+db.tokens.forEach(t=>{if(t.uid==u.id)t.used=true});const tk={k:Math.random().toString(36).slice(2,10),uid:u.id,exp:now()+db.cfg.resetMin*60000,used:false};db.tokens.push(tk);aud('Recuperación solicitada','',u.email);return tk}
+function useReset(k,p){const t=db.tokens.find(x=>x.k==k);if(!t||t.used)return{ok:false,msg:'Este enlace ya no es válido.'};if(t.exp<now())return{ok:false,msg:'El enlace expiró. Solicita uno nuevo.'};
+if(p.length<8)return{ok:false,msg:'La contraseña necesita al menos 8 caracteres.'};const u=db.users.find(x=>x.id==t.uid);u.pass=p;u.upd=now();t.used=true;aud('Contraseña restablecida','',u.email);return{ok:true}}
+const nAct=r=>db.users.filter(u=>u.role==r&&u.status=='Activo').length,roleFree=r=>!nAct(r);
+function toast(m){const t=$('#t');t.textContent=m;t.style.display='block';clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.display='none',3200)}
+const DROP='<svg width="22" height="26" viewBox="0 0 22 26" aria-hidden="true"><path d="M11 1C11 1 2 11 2 17a9 9 0 0018 0C20 11 11 1 11 1z" fill="var(--t)"/></svg>';
+function go(x,t){v=x;if(t)tab=t;mem={};R();scrollTo(0,0)}
+function head(){const u=cur(),L=[['inicio','Inicio'],['reportar','Reportar'],['consultar','Consultar'],['consejos','Consejos']],on=k=>v==k||(k=='reportar'&&v=='confirmacion')||(k=='consultar'&&v=='seguimiento');
+return `<header><div class="w"><button class="brand" onclick="go('inicio')">${DROP}Agua Clara RD</button><nav>${L.map(([k,n])=>`<button class="nl ${on(k)?'on':''}" onclick="go('${k}')">${n}</button>`).join('')}<button class="nl ${['acceso','recuperar','panel'].includes(v)?'on':''}" onclick="go('${u?'panel':'acceso'}')">${u?'Mi panel':'Acceso'}</button>${u?'<button class="nl" onclick="out()">Cerrar sesión</button>':''}<button class="btn" onclick="go('reportar')">Reportar</button></nav></div><div class="bn">Proyecto académico · Datos de ejemplo</div></header>`}
+const foot='<footer><div class="w"><b>Agua Clara RD</b><span>Propuesta académica para República Dominicana</span></div></footer>';
+function R(){const V={inicio:vInicio,reportar:vReportar,confirmacion:vConf,consultar:vConsultar,seguimiento:vSeg,consejos:vConsejos,acceso:vAcceso,recuperar:vRecuperar,panel:vPanel};if(v=='panel'&&!cur())v='acceso';
+$('#app').innerHTML=head()+'<main><div class="w">'+V[v]()+'</div></main>'+foot;if(v=='panel'&&tab=='auditoria')drawAud()}
+function vInicio(){const s=[['1','Describe el problema','Indica tu municipio, sector y el tipo de avería.'],['2','Guarda tu código','Consérvalo para consultarlo después.'],['3','Consulta el estado','Revisa qué se ha registrado y cuál es el siguiente paso.']];
+return `<div class="hero"><div><span class="tag">Cuidemos cada gota</span><h1>Tu barrio merece agua y respuestas.</h1><p class="mu">Reporta una avería y consulta su seguimiento desde un solo lugar. Claro, sencillo y cercano.</p><div class="row"><button class="btn" onclick="go('reportar')">Reportar una avería</button><button class="btn s" onclick="go('consultar')">Consultar reporte</button></div></div>
+<div class="art"><svg viewBox="0 0 400 300" aria-hidden="true"><circle cx="270" cy="120" r="85" fill="#cfe9e9" opacity=".7"/><rect x="40" y="80" width="46" height="110" rx="8" fill="#0b6b6b"/><rect x="36" y="74" width="54" height="12" rx="6" fill="#12304a"/><path d="M215 140l50-42 50 42z" fill="#e87b55"/><rect x="225" y="140" width="80" height="100" fill="#eef5f5"/><rect x="238" y="156" width="16" height="16" fill="#0b6b6b"/><rect x="276" y="156" width="16" height="16" fill="#0b6b6b"/><rect x="255" y="200" width="22" height="40" fill="#4f7d85"/><path d="M0 250q100-30 200-5t200-10v65H0z" fill="#9ccaca"/><path d="M130 55c0 0-18 22-18 36a18 18 0 0036 0c0-14-18-36-18-36z" fill="#fff"/></svg><div class="mini"><b>Reporte de ejemplo</b><br><span class="tag">Recibido</span></div></div></div>
+<h2>Reporta, guarda y consulta</h2><p class="mu">Tres pasos para organizar un reporte y conocer su estado.</p><div class="g3" style="margin-top:14px">${s.map(x=>`<div class="card"><div class="ic">${x[0]}</div><h3>${x[1]}</h3><p class="mu">${x[2]}</p></div>`).join('')}</div>
+<div class="card" style="margin-top:22px;background:var(--mint)"><h3>¿Eres parte del equipo?</h3><p class="mu">El acceso para administradores, agentes y supervisores está en <button class="nl" onclick="go('acceso')">Acceso</button>. Cada rol ve solo lo que le corresponde.</p></div>`}
+const fe=k=>mem.e&&mem.e[k]?`<div class="em">${mem.e[k]}</div>`:'',cl=k=>mem.e&&mem.e[k]?'err':'';
+function vReportar(){const f=mem.f||{mun:'Santo Domingo Este',tipo:TIPOS[1],desde:'2026-10-02'};
+return `<h1 style="font-size:32px">Cuéntanos qué está pasando</h1><p class="mu">Completa los datos del problema. Los campos con * son obligatorios.</p><div class="gs" style="margin-top:18px"><div class="card"><h3>Datos del problema</h3>
+<div class="g2"><div><label for="mun">Municipio *</label><select id="mun">${['Santo Domingo Este','Santo Domingo Norte','Santo Domingo Oeste','Distrito Nacional','Santiago'].map(m=>`<option ${f.mun==m?'selected':''}>${m}</option>`).join('')}</select><div class="hint">Opciones de demostración.</div></div>
+<div class="${cl('sec')}"><label for="sec">Sector *</label><input id="sec" value="${esc(f.sec||'')}" placeholder="Alma Rosa">${fe('sec')||'<div class="hint">Indica una ubicación general.</div>'}</div></div>
+<label>Tipo de problema *</label><div class="opts">${TIPOS.map(t=>`<button type="button" class="opt ${f.tipo==t?'on':''}" onclick="pickT('${t}')">${t}</button>`).join('')}</div>
+<div class="g2"><div><label for="des">¿Desde cuándo? (opcional)</label><input id="des" type="date" value="${f.desde||''}"></div><div><label for="fo">Foto (opcional)</label><input id="fo" type="file" accept="image/*"><div class="hint">Solo nombre local; no se envía.</div></div></div>
+<div class="${cl('desc')}"><label for="dsc">Descripción *</label><textarea id="dsc">${esc(f.desc||'')}</textarea>${fe('desc')||'<div class="hint">Evita direcciones exactas, documentos y datos de otras personas.</div>'}</div>
+<label>Contacto · opcional</label><div class="g2"><input id="cn" placeholder="Tu nombre" aria-label="Nombre"><input id="ct" placeholder="Tu teléfono" aria-label="Teléfono"></div>
+<div class="row"><button class="btn" onclick="sendRep()">Enviar reporte de prueba</button></div><div class="hint">Demostración. No envía información a ninguna institución.</div></div>
+<div><div class="card"><div class="ic">i</div><h3>Un buen reporte ayuda</h3><p class="mu">1. Indica dónde ocurre.<br>2. Explica lo que observaste.<br>3. Añade una foto si te ayuda.</p></div><div class="card" style="margin-top:14px"><div class="ic">✓</div><h3>Cuida tu información</h3><p class="mu">Indica una ubicación general. Evita tu dirección exacta y datos de otras personas. Tu contacto no aparece en el seguimiento.</p></div></div></div>`}
+function rd(){return{mun:$('#mun').value,sec:$('#sec').value.trim(),tipo:(mem.f&&mem.f.tipo)||TIPOS[1],desde:$('#des').value,desc:$('#dsc').value.trim()}}
+function pickT(t){const f=rd();f.tipo=t;mem.f=f;R()}
+function sendRep(){const f=rd();mem.f=f;const e={};if(!f.sec)e.sec='Escribe el sector donde ocurre el problema.';if(f.desc.length<10)e.desc='Describe lo que observas (mínimo 10 caracteres).';
+if(Object.keys(e).length){mem.e=e;R();return}
+const code='DEMO-'+String(db.reports.length+1).padStart(3,'0');db.reports.push({code,mun:f.mun,sec:f.sec,tipo:f.tipo,desde:f.desde,desc:f.desc,est:0});save();aud('Reporte creado',code,'anónimo');v='confirmacion';mem={code};R();scrollTo(0,0)}
+function vConf(){return `<div class="card" style="max-width:480px;margin:10px auto;text-align:center"><div class="ic" style="margin:0 auto 10px">✓</div><h1 style="font-size:24px">Tu reporte de prueba está listo</h1><p class="mu">Guarda este código para consultar el seguimiento.</p><div class="code">${esc(mem.code)}</div><button class="btn s sm" onclick="cp()">${mem.cp?'✓ Código copiado':'Copiar código'}</button><p class="mu sm" style="margin-top:14px">Esta es una confirmación simulada. El reporte no se ha enviado a CAASD ni a INAPA.</p><div class="row" style="justify-content:center"><button class="btn" onclick="go('seguimiento');mem.c='${esc(mem.code)}';R()">Ver seguimiento</button><button class="btn s" onclick="go('inicio')">Volver al inicio</button></div></div>`}
+function cp(){try{navigator.clipboard.writeText(mem.code)}catch(e){}mem.cp=1;R()}
+function vConsultar(){return `<div class="g2" style="align-items:start"><div><h1 style="font-size:32px">Dale seguimiento a tu reporte</h1><p class="mu">Consulta la información con el código que recibiste al completar el reporte.</p><div class="card" style="margin-top:14px"><div class="ic">⌕</div><h3>Tu código, a mano</h3><p class="mu">No necesitas crear una cuenta para explorar esta propuesta.</p></div></div>
+<div class="card ${mem.err?'err':''}"><h3>Buscar un reporte</h3><label for="cod">Código del reporte</label><input id="cod" value="${esc(mem.q||'DEMO-001')}">${mem.err?`<div class="em">${mem.err}</div>`:'<div class="hint">Ejemplo disponible: DEMO-001</div>'}<div class="row" style="flex-direction:column"><button class="btn" onclick="buscar($('#cod').value)">Consultar reporte</button><button class="btn s" onclick="buscar('XXX-000')">Probar código incorrecto</button></div><div class="hint">Solo se consulta un reporte de ejemplo. No hay conexión con sistemas oficiales.</div></div></div>`}
+function buscar(c){c=c.trim().toUpperCase();if(db.reports.some(r=>r.code==c)){v='seguimiento';mem={c};R()}else{mem={err:'No encontramos ese código. Revisa que esté escrito igual que en tu confirmación.',q:c};R()}}
+function vSeg(){const r=db.reports.find(x=>x.code==mem.c)||db.reports[0],D=['El reporte se registró en esta demostración.','Se revisaría la información del problema.','Se registraría una atención al reporte.'];
+return `<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:center"><h1 style="font-size:32px">Seguimiento de ${esc(r.code)}</h1><span class="tag">${ESTS[r.est]}</span></div><p class="mu">Reporte de ejemplo · No corresponde a un caso oficial.</p><div class="g2" style="margin-top:14px;align-items:start"><div class="card"><h3>Estado del reporte</h3>${ESTS.map((s,i)=>`<div class="tl"><div class="dot ${i<=r.est?'on':''}">${i<=r.est?'✓':i+1}</div><div><b>${s}</b><div class="hint">${i==r.est?'Actual':i<r.est?'Completado':'Pendiente'} · Ejemplo</div><p class="mu">${D[i]}</p></div></div>`).join('')}<div class="hint">Las etapas son ilustrativas. No se promete una fecha de reparación.</div></div>
+<div class="card"><h3>Información del problema</h3><div class="hint">Tipo</div><b>${esc(r.tipo)}</b><div class="hint" style="margin-top:8px">Municipio</div><b>${esc(r.mun)}</b><div class="hint" style="margin-top:8px">Sector</div><b>${esc(r.sec)}</b><div class="hint" style="margin-top:8px">Desde cuándo</div><b>${esc(r.desde||'—')}</b><div class="hint" style="margin-top:12px">Descripción</div><p>${esc(r.desc)}</p></div></div>
+<div class="row"><button class="btn" onclick="go('consultar')">Consultar otro reporte</button><button class="btn s" onclick="go('inicio')">Volver al inicio</button><button class="btn s" onclick="go('consejos')">Ver consejos</button></div>`}
+function vConsejos(){const c=[['Cierra el grifo','Mientras te cepillas o enjabonas las manos, mantenlo cerrado.'],['Revisa las fugas','Observa los grifos y tuberías de tu hogar y solicita ayuda para reparar pérdidas.'],['Describe con claridad','Indica qué ocurre, el sector y desde cuándo observas el problema.'],['Consulta avisos oficiales','Revisa las comunicaciones del prestador que corresponde a tu zona.']];
+return `<h1 style="font-size:32px">Pequeños hábitos, menos desperdicio</h1><p class="mu">Acciones sencillas para cuidar el agua y buscar información del servicio.</p><div class="g2" style="margin-top:14px">${c.map((x,i)=>`<div class="card"><div class="ic">${i+1}</div><h3>${x[0]}</h3><p class="mu">${x[1]}</p></div>`).join('')}</div><div class="card" style="margin-top:14px"><h3>Consulta fuentes oficiales</h3><p class="mu">Estos enlaces abren CAASD e INAPA. El proyecto es independiente; consulta el prestador que corresponde a tu zona.</p><div class="row"><a class="btn s" href="https://www.caasd.gob.do" target="_blank" rel="noopener" style="text-decoration:none">CAASD · Sitio oficial</a><a class="btn s" href="https://www.inapa.gob.do" target="_blank" rel="noopener" style="text-decoration:none">INAPA · Sitio oficial</a></div></div>`}
+/* ---------- ÉPICA 1 ---------- */
+function vAcceso(){return `<div class="g2" style="align-items:start"><div><span class="hu">HU-1.1 · Autenticación</span><h1 style="font-size:32px">Acceso del equipo</h1><p class="mu">Inicia sesión para entrar a tu panel. Verás solo los módulos que corresponden a tu rol.</p><div class="card" style="margin-top:14px"><h3>Cuentas de demostración</h3><p class="mu sm">Contraseña de todas: <b>${PW}</b>. Toca una para llenarla.</p><div class="row">${db.users.slice(0,7).map(u=>`<button class="btn s sm" onclick="$('#e').value='${u.email}';$('#p').value='${PW}'">${esc(u.role)}</button>`).join('')}</div></div>
+<div class="card ${mem.rerr?'err':''}" style="margin-top:14px"><span class="hu">HU-1.2 · Registro de usuarios</span><h3>Crear cuenta</h3><p class="mu sm">Las cuentas nuevas entran con el rol Cliente. El administrador puede cambiarlo después.</p><label for="n1">Nombre completo</label><input id="n1"><label for="m1">Correo electrónico</label><input id="m1" type="email"><label for="t1">Teléfono</label><input id="t1"><label for="w1">Contraseña (mínimo 8)</label><input id="w1" type="password">${mem.rerr?`<div class="em" role="alert">${mem.rerr}</div>`:''}<div class="row"><button class="btn" onclick="selfReg()">Crear cuenta</button></div></div></div>
+<div class="card ${mem.err?'err':''}"><h3>Iniciar sesión</h3><label for="e">Correo</label><input id="e" type="email" value="${esc(mem.em||'')}" autocomplete="username"><label for="p">Contraseña</label><input id="p" type="password" autocomplete="current-password" onkeydown="if(event.key=='Enter')doLogin()">${mem.err?`<div class="em" role="alert">${mem.err}</div>`:''}<div class="row"><button class="btn" onclick="doLogin()">Entrar</button><button class="btn s" onclick="go('recuperar')">Olvidé mi contraseña</button></div></div></div>`}
+function doLogin(){const e=$('#e').value.trim(),r=login(e,$('#p').value);if(r.ok)go('panel','reportes');else{mem={err:r.msg,em:e};R()}}
+function selfReg(){const o={name:$('#n1').value.trim(),email:$('#m1').value.trim(),phone:$('#t1').value.trim(),pass:$('#w1').value},bad=m=>{mem={rerr:m};R()};
+if(!o.name||!/^\S+@\S+\.\S+$/.test(o.email))return bad('Escribe tu nombre y un correo válido.');
+if(db.users.some(x=>x.email.toLowerCase()==o.email.toLowerCase()))return bad('Ese correo ya está registrado. Inicia sesión.');
+if(o.pass.length<8)return bad('La contraseña necesita al menos 8 caracteres.');
+db.users.push({id:Math.max(0,...db.users.map(x=>x.id))+1,name:o.name,email:o.email,phone:o.phone,pass:o.pass,role:'Cliente',status:'Activo',upd:now()});aud('Registro de usuario',o.email,o.email);toast('Cuenta creada. Ya puedes iniciar sesión.');mem={em:o.email};R()}
+function out(){logout();toast('Sesión cerrada');go('inicio')}
+function vRecuperar(){const t=mem.tk;
+if(mem.step=='new')return `<div class="card" style="max-width:440px;margin:auto"><span class="hu">HU-1.5</span><h3>Crea tu nueva contraseña</h3><label for="np">Nueva contraseña</label><input id="np" type="password">${mem.err?`<div class="em">${mem.err}</div>`:''}<div class="row"><button class="btn" onclick="setNew()">Guardar contraseña</button></div></div>`;
+return `<div class="card" style="max-width:480px;margin:auto"><span class="hu">HU-1.5 · Recuperación de contraseña</span><h3>Recupera tu acceso</h3><label for="re">Correo de tu cuenta</label><input id="re" type="email" value="${esc(mem.em||'')}">${mem.err?`<div class="em">${mem.err}</div>`:''}<div class="row"><button class="btn" onclick="doReq()">Enviar enlace</button><button class="btn s" onclick="go('acceso')">Volver</button></div>
+${t?`<div class="card" style="background:var(--mint)"><b>Correo simulado</b><p class="sm">El enlace vence a las ${new Date(t.exp).toLocaleTimeString('es-DO')} (${db.cfg.resetMin} min).</p><button class="btn sm" onclick="mem.step='new';mem.k='${t.k}';mem.err='';R()">Abrir enlace de recuperación</button></div>`:''}</div>`}
+function doReq(){const e=$('#re').value.trim(),t=reqReset(e);mem={em:e,tk:t,err:t?'':'No encontramos una cuenta con ese correo.'};R()}
+function setNew(){const r=useReset(mem.k,$('#np').value);if(r.ok){toast('Contraseña actualizada. Ya puedes iniciar sesión.');go('acceso')}else{mem.err=r.msg;R()}}
+function vPanel(){const u=cur(),T=[...Object.keys(MODS).map(k=>[k,MODS[k]]),['perfil','Mi perfil'],['pruebas','Pruebas']];
+const body={reportes:tRep,usuarios:tUsr,roles:tRol,permisos:tPer,auditoria:tAud,perfil:tPerfil,pruebas:tPru}[tab];
+return `<div class="card" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px"><span>Sesión iniciada: <b>${esc(u.name)}</b> · <span class="tag">${esc(u.role)}</span></span><button class="btn r" onclick="out()">Cerrar sesión</button></div><div class="pn"><div class="side">${T.map(([k,n])=>`<button class="nl ${tab==k?'on':''}" onclick="openTab('${k}')">${n}${MODS[k]&&!can(k,'r')?' 🔒':''}</button>`).join('')}<button class="nl" style="color:var(--er)" onclick="out()">Cerrar sesión</button></div><div>${MODS[tab]&&!can(tab,'r')?denied():body()}</div></div>`}
+function openTab(k){if(MODS[k]&&!can(k,'r'))chk(k,'r');tab=k;mem={};R()}
+const denied=()=>`<div class="card" style="border-color:var(--er)"><h3 style="color:var(--er)">Acceso denegado</h3><p class="mu">Tu rol (${esc(cur().role)}) no tiene permiso para consultar este módulo. El intento quedó registrado en la auditoría.</p></div>`;
+const act=(m,a,fn,txt,cls)=>`<button class="btn sm ${cls||'s'}" ${can(m,a)?'':'disabled title="Tu rol no permite esta acción"'} onclick="${fn}">${txt}</button>`;
+function tRep(){return `<div class="card"><h3>Reportes ciudadanos</h3><div class="tw"><table><tr><th>Código</th><th>Sector</th><th>Tipo</th><th>Estado</th><th></th></tr>${db.reports.map(r=>`<tr><td><b>${r.code}</b></td><td>${esc(r.sec)}</td><td>${esc(r.tipo)}</td><td><select aria-label="Estado" ${can('reportes','u')?'':'disabled'} onchange="setEst('${r.code}',this.value)">${ESTS.map((s,i)=>`<option value="${i}" ${r.est==i?'selected':''}>${s}</option>`).join('')}</select></td><td>${act('reportes','d',`delRep('${r.code}')`,'Eliminar','r')}</td></tr>`).join('')}</table></div><div class="row">${act('reportes','c',"go('reportar')",'Nuevo reporte','')}</div></div>`}
+function setEst(c,i){if(!chk('reportes','u'))return R();db.reports.find(r=>r.code==c).est=+i;aud('Reporte modificado',c+' → '+ESTS[i]);toast('Estado actualizado');R()}
+function delRep(c){if(!chk('reportes','d'))return;db.reports=db.reports.filter(r=>r.code!=c);aud('Reporte eliminado',c);R()}
+function tUsr(){const me=cur();return `<div class="card"><span class="hu">HU-1.2 · HU-1.6</span><h3>Usuarios</h3><div class="tw"><table><tr><th>Nombre</th><th>Correo</th><th>Teléfono</th><th>Rol</th><th>Estado</th><th></th></tr>${db.users.map(u=>`<tr><td>${esc(u.name)}</td><td>${esc(u.email)}</td><td>${esc(u.phone)}</td><td><select aria-label="Rol" ${can('usuarios','u')?'':'disabled'} onchange="setRol(${u.id},this.value)">${db.roles.filter(r=>r.a||r.n==u.role).map(r=>`<option ${r.n==u.role?'selected':''}>${esc(r.n)}</option>`).join('')}</select></td><td><span class="tag ${u.status=='Bloqueado'?'er':''}">${u.status}</span>${u.reason?`<div class="hint">${esc(u.reason)}</div>`:''}</td><td>${mem.b==u.id?`<input id="mot" placeholder="Motivo del bloqueo" aria-label="Motivo"> <button class="btn sm r" onclick="doBlk(${u.id})">Confirmar</button>`:(u.status=='Activo'?act('usuarios','u',`mem.b=${u.id};R()`,'Bloquear'):act('usuarios','u',`unblk(${u.id})`,'Reactivar'))} ${u.id==me.id?'':act('usuarios','d',`delUsr(${u.id})`,'Eliminar','r')}</td></tr>`).join('')}</table></div></div>
+<div class="card" style="margin-top:14px"><h3>Registrar usuario</h3><div class="g2"><div><label for="nn">Nombre completo</label><input id="nn"></div><div><label for="ne">Correo electrónico</label><input id="ne" type="email"></div><div><label for="nt">Teléfono</label><input id="nt"></div><div><label for="nr">Rol</label><select id="nr">${db.roles.filter(r=>r.a).map(r=>`<option>${esc(r.n)}</option>`).join('')}</select></div><div><label for="nw">Contraseña inicial</label><input id="nw" type="text" value="${PW}"></div></div>${mem.err?`<div class="em" role="alert">${mem.err}</div>`:''}<div class="row">${act('usuarios','c','newUsr()','Crear usuario','')}</div></div>
+<div class="card" style="margin-top:14px"><h3>Vigencia del enlace de recuperación</h3><div class="row" style="align-items:center"><input id="mn" type="number" min="1" value="${db.cfg.resetMin}" style="width:90px" aria-label="Minutos"> minutos ${act('usuarios','u','setCfg()','Guardar','')}</div></div>`}
+function newUsr(){const r=addUser({name:$('#nn').value.trim(),email:$('#ne').value.trim(),phone:$('#nt').value.trim(),role:$('#nr').value,pass:$('#nw').value});if(r.ok){toast('Usuario creado en estado Activo');mem={}}else mem.err=r.msg;R()}
+function setRol(id,r){if(!chk('usuarios','u'))return R();const u=db.users.find(x=>x.id==id);u.role=r;u.upd=now();aud('Rol asignado',u.email+' → '+r);toast('Rol actualizado');R()}
+function doBlk(id){if(!chk('usuarios','u'))return;const m=$('#mot').value.trim();if(!m)return toast('Escribe el motivo del bloqueo');const u=db.users.find(x=>x.id==id);u.status='Bloqueado';u.reason=m;aud('Usuario bloqueado',u.email+' · '+m);mem={};R()}
+function unblk(id){if(!chk('usuarios','u'))return;const u=db.users.find(x=>x.id==id);u.status='Activo';u.reason='';aud('Usuario reactivado',u.email);R()}
+function delUsr(id){if(!chk('usuarios','d'))return;const u=db.users.find(x=>x.id==id);db.users=db.users.filter(x=>x.id!=id);aud('Usuario eliminado',u.email);R()}
+function setCfg(){if(!chk('usuarios','u'))return;db.cfg.resetMin=Math.max(1,+$('#mn').value||15);save();toast('Vigencia guardada')}
+function tRol(){return `<div class="card"><span class="hu">HU-1.3 · Gestión de roles</span><h3>Roles</h3><div class="tw"><table><tr><th>Rol</th><th>Usuarios activos</th><th>Estado</th><th></th></tr>${db.roles.map(r=>`<tr><td>${mem.er==r.n?`<input id="rn" value="${esc(r.n)}" aria-label="Nombre">`:esc(r.n)}</td><td>${nAct(r.n)}</td><td><span class="tag ${r.a?'':'er'}">${r.a?'Activo':'Desactivado'}</span></td><td>${mem.er==r.n?`<button class="btn sm" onclick="saveRol('${esc(r.n)}')">Guardar</button>`:act('roles','u',`mem.er='${esc(r.n)}';R()`,'Editar')} ${act('roles','u',`togRol('${esc(r.n)}')`,r.a?'Desactivar':'Activar')} ${act('roles','d',`delRol('${esc(r.n)}')`,'Eliminar','r')}</td></tr>`).join('')}</table></div></div>
+<div class="card" style="margin-top:14px"><h3>Crear rol</h3><div class="row" style="align-items:center"><input id="nrn" placeholder="Nombre del rol" style="max-width:260px" aria-label="Nuevo rol">${act('roles','c','addRol()','Crear rol','')}</div>${mem.err?`<div class="em" role="alert">${mem.err}</div>`:''}</div>`}
+function addRol(){if(!chk('roles','c'))return;const n=$('#nrn').value.trim();if(!n){mem.err='Escribe el nombre del rol.';return R()}if(db.roles.some(r=>r.n.toLowerCase()==n.toLowerCase())){mem.err='Ese rol ya existe.';return R()}
+db.roles.push({n,a:true});db.perms[n]={};Object.keys(MODS).forEach(m=>db.perms[n][m]={c:0,r:0,u:0,d:0});aud('Rol creado',n);mem={};R()}
+function saveRol(o){if(!chk('roles','u'))return;const n=$('#rn').value.trim();if(!n||(n!=o&&db.roles.some(r=>r.n==n))){mem.err='Nombre inválido o repetido.';mem.er=o;return R()}
+db.roles.find(r=>r.n==o).n=n;db.users.forEach(u=>{if(u.role==o)u.role=n});db.perms[n]=db.perms[o];if(n!=o)delete db.perms[o];aud('Rol modificado',o+' → '+n);mem={};R()}
+function togRol(n){if(!chk('roles','u'))return;const r=db.roles.find(x=>x.n==n);if(r.a&&!roleFree(n)){mem.err='No puedes desactivar "'+n+'": tiene usuarios activos.';return R()}r.a=!r.a;aud(r.a?'Rol activado':'Rol desactivado',n);mem={};R()}
+function delRol(n){if(!chk('roles','d'))return;if(!roleFree(n)){mem.err='No puedes eliminar "'+n+'": tiene usuarios activos asociados.';return R()}db.roles=db.roles.filter(r=>r.n!=n);delete db.perms[n];aud('Rol eliminado',n);mem={};R()}
+function tPer(){const r=mem.pr||db.roles[0].n,lock=r==ROLES[0];
+return `<div class="card"><span class="hu">HU-1.4 · Gestión de permisos</span><h3>Permisos por módulo</h3><label for="pr">Rol</label><select id="pr" style="max-width:280px" onchange="mem.pr=this.value;R()">${db.roles.map(x=>`<option ${x.n==r?'selected':''}>${esc(x.n)}</option>`).join('')}</select><div class="tw" style="margin-top:12px"><table><tr><th>Módulo</th>${Object.values(ACT).map(a=>`<th>${a}</th>`).join('')}</tr>${Object.keys(MODS).map(m=>`<tr><td>${MODS[m]}</td>${Object.keys(ACT).map(a=>`<td><input type="checkbox" style="width:auto" aria-label="${ACT[a]} ${MODS[m]}" ${db.perms[r][m][a]?'checked':''} ${can('permisos','u')&&!lock?'':'disabled'} onchange="setP('${esc(r)}','${m}','${a}',this.checked)"></td>`).join('')}</tr>`).join('')}</table></div><p class="hint">${lock?'El Super Administrador no se puede restringir.':'Los cambios se aplican de inmediato.'}</p></div>`}
+function setP(r,m,a,x){if(!chk('permisos','u'))return R();db.perms[r][m][a]=x?1:0;aud('Permiso modificado',r+' · '+MODS[m]+' · '+ACT[a]+' = '+(x?'sí':'no'));toast('Permiso aplicado');R()}
+function tAud(){return `<div class="card"><span class="hu">HU-1.8 · Auditoría de accesos</span><h3>Historial</h3><div class="row"><input id="fq" placeholder="Filtrar por usuario o detalle" aria-label="Filtro" oninput="drawAud()" style="max-width:260px"><select id="fe" aria-label="Evento" onchange="drawAud()" style="max-width:220px"><option value="">Todos los eventos</option>${[...new Set(db.audit.map(a=>a.ev))].map(e=>`<option>${esc(e)}</option>`).join('')}</select></div><div class="tw" id="at"></div><p class="hint">La IP y la localización son simuladas en esta demostración (sin servidor).</p></div>`}
+function drawAud(){const q=($('#fq')||{value:''}).value.toLowerCase(),e=($('#fe')||{value:''}).value,el=$('#at');if(!el)return;
+const L=db.audit.filter(a=>(!e||a.ev==e)&&(!q||(a.u+a.det).toLowerCase().includes(q)));
+el.innerHTML=`<table><tr><th>Fecha y hora</th><th>Usuario</th><th>Evento</th><th>IP</th><th>Localización</th><th>Detalle</th></tr>${L.slice(0,80).map(a=>`<tr><td>${fmt(a.t)}</td><td>${esc(a.u)}</td><td>${esc(a.ev)}</td><td>${a.ip}</td><td>${a.loc}</td><td>${esc(a.det)}</td></tr>`).join('')||'<tr><td colspan="6" class="mu">Sin registros con ese filtro.</td></tr>'}</table>`}
+function tPerfil(){const u=cur();return `<div class="card"><span class="hu">HU-1.7 · Administración de perfil</span><h3>Mi perfil</h3><div style="display:flex;gap:14px;align-items:center">${u.photo?`<img src="${u.photo}" alt="Foto" width="64" height="64" style="border-radius:50%;object-fit:cover">`:`<div class="ic" style="width:64px;height:64px;border-radius:50%;font-size:22px">${esc(u.name[0])}</div>`}<input id="ph" type="file" accept="image/*" onchange="setPhoto(this)" aria-label="Fotografía"></div>
+<div class="g2"><div><label for="pn">Nombre</label><input id="pn" value="${esc(u.name)}"></div><div><label for="pt">Teléfono</label><input id="pt" value="${esc(u.phone)}"></div></div><div class="row"><button class="btn" onclick="saveProf()">Guardar cambios</button></div><p class="hint">Última actualización: ${fmt(u.upd)}</p></div>
+<div class="card" style="margin-top:14px"><h3>Cambiar contraseña</h3><div class="g2"><div><label for="pa">Contraseña actual</label><input id="pa" type="password"></div><div><label for="pb">Nueva contraseña</label><input id="pb" type="password"></div></div>${mem.err?`<div class="em" role="alert">${mem.err}</div>`:''}<div class="row"><button class="btn" onclick="chgPw()">Cambiar contraseña</button></div></div>`}
+function saveProf(){const u=cur(),n=$('#pn').value.trim();if(!n)return toast('El nombre no puede quedar vacío');u.name=n;u.phone=$('#pt').value.trim();u.upd=now();aud('Perfil actualizado','');toast('Perfil actualizado');R()}
+function setPhoto(i){const f=i.files[0];if(!f)return;if(f.size>150000)return toast('La foto debe pesar menos de 150 KB');const r=new FileReader();r.onload=()=>{const u=cur();u.photo=r.result;u.upd=now();aud('Foto actualizada','');R()};r.readAsDataURL(f)}
+function chgPw(){const u=cur();if($('#pa').value!==u.pass){mem.err='La contraseña actual no coincide.';return R()}if($('#pb').value.length<8){mem.err='La nueva contraseña necesita al menos 8 caracteres.';return R()}u.pass=$('#pb').value;u.upd=now();aud('Contraseña cambiada','');mem={};toast('Contraseña cambiada');R()}
+/* ---------- Pruebas automáticas ---------- */
+function runTests(){const bak=db,out=[];testing=1;
+const t=(n,f)=>{db=JSON.parse(JSON.stringify(bak));db.session=null;let ok=false;try{ok=!!f()}catch(e){}out.push([n,ok])};
+t('HU-1.1 Login válido abre sesión y registra el acceso',()=>login('cliente@aguaclara.do',PW).ok&&cur().role=='Cliente'&&db.audit[0].ev=='Inicio de sesión');
+t('HU-1.1 Credenciales inválidas muestran error y no abren sesión',()=>{const r=login('cliente@aguaclara.do','mala');return !r.ok&&!cur()});
+t('HU-1.6 Usuario bloqueado no puede iniciar sesión',()=>{db.users[5].status='Bloqueado';return !login('cliente@aguaclara.do',PW).ok});
+t('HU-1.2 Correo duplicado es rechazado',()=>{login('admin@aguaclara.do',PW);return !addUser({name:'X',email:'cliente@aguaclara.do',pass:PW,role:'Cliente'}).ok});
+t('HU-1.2 Admin crea usuario en estado Activo',()=>{login('admin@aguaclara.do',PW);return addUser({name:'Nuevo',email:'n@x.do',pass:PW,role:'Cliente'}).ok&&db.users.at(-1).status=='Activo'});
+t('Acceso no autorizado: Cliente no puede crear usuarios',()=>{login('cliente@aguaclara.do',PW);return !addUser({name:'X',email:'z@x.do',pass:PW,role:'Cliente'}).ok&&db.audit[0].ev=='Acceso denegado'});
+t('Acceso autorizado: Cliente puede consultar reportes',()=>{login('cliente@aguaclara.do',PW);return can('reportes','r')&&!can('reportes','d')});
+t('Supervisor consulta auditoría pero no usuarios',()=>{login('supervisor@aguaclara.do',PW);return can('auditoria','r')&&!can('usuarios','r')});
+t('HU-1.4 Un cambio de permiso se aplica de inmediato',()=>{login('cliente@aguaclara.do',PW);const a=can('usuarios','r');db.perms.Cliente.usuarios.r=1;return !a&&can('usuarios','r')});
+t('HU-1.3 Un rol con usuarios activos no se puede desactivar ni eliminar',()=>!roleFree('Cliente')&&roleFree('Ingeniero')==false);
+t('HU-1.5 El enlace de recuperación es de un solo uso',()=>{const k=reqReset('cliente@aguaclara.do');return useReset(k.k,'Nueva123*').ok&&!useReset(k.k,'Otra12345').ok});
+t('HU-1.5 El enlace vencido es rechazado',()=>{const k=reqReset('cliente@aguaclara.do');k.exp=now()-1;return !useReset(k.k,'Nueva123*').ok});
+t('HU-1.8 El cierre de sesión queda registrado',()=>{login('admin@aguaclara.do',PW);logout();return db.audit[0].ev=='Cierre de sesión'});
+db=bak;testing=0;return out}
+function probe(){const r=[];Object.keys(MODS).forEach(m=>Object.keys(ACT).forEach(a=>{const ok=can(m,a);r.push([MODS[m],ACT[a],ok]);if(!ok)aud('Acceso denegado',MODS[m]+' · '+ACT[a]+' (prueba)')}));mem.pb=r;R()}
+function tPru(){const M=Object.keys(MODS);return `<div class="card"><h3>Probar mis permisos ahora</h3><p class="mu">Intenta las 4 acciones en cada módulo con tu rol actual (<b>${esc(cur().role)}</b>). Las denegadas quedan registradas en Auditoría. Cierra sesión y entra con otro rol para comparar.</p><div class="row"><button class="btn" onclick="probe()">Probar acceso</button></div>${mem.pb?`<div class="tw"><table><tr><th>Módulo</th><th>Acción</th><th>Resultado</th></tr>${mem.pb.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td class="${r[2]?'pass':'fail'}">${r[2]?'✓ Permitido':'✗ Denegado'}</td></tr>`).join('')}</table></div>`:''}</div><div class="card" style="margin-top:14px"><h3>Matriz de acceso por rol</h3><div class="tw"><table><tr><th>Rol</th>${M.map(m=>`<th>${MODS[m]}</th>`).join('')}</tr>${db.roles.map(r=>`<tr><td>${esc(r.n)}</td>${M.map(m=>`<td>${Object.keys(ACT).map(a=>db.perms[r.n][m][a]?a.toUpperCase():'·').join(' ')}</td>`).join('')}</tr>`).join('')}</table></div><p class="hint">C crear · R consultar · U modificar · D eliminar. Cámbialo en la pestaña Permisos y vuelve aquí.</p></div><div class="card" style="margin-top:14px"><h3>Casos de prueba</h3><p class="mu">Ejecuta los casos de acceso autorizado y no autorizado sobre una copia de los datos.</p><div class="row"><button class="btn" onclick="mem.res=runTests();R()">Ejecutar pruebas</button></div>${mem.res?`<div class="tw"><table><tr><th>Caso</th><th>Resultado</th></tr>${mem.res.map(r=>`<tr><td>${r[0]}</td><td class="${r[1]?'pass':'fail'}">${r[1]?'✓ Pasó':'✗ Falló'}</td></tr>`).join('')}</table></div><p><b>${mem.res.filter(r=>r[1]).length} de ${mem.res.length}</b> pasaron.</p>`:''}</div><div class="card" style="margin-top:14px"><h3>Restablecer datos de demostración</h3><button class="btn s" onclick="db=seed();save();go('acceso')">Restablecer todo</button></div>`}
+load();R();
+</script>
+</body>
+</html>
